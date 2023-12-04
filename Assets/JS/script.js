@@ -12,10 +12,12 @@ $(document).ready(function () {
   
   // Display Day and time
   var currentTime = dayjs().format('h a');
-  var currentDay =  dayjs().day(12).format(' dddd');
+  var currentTimeNum = dayjs().format('h');
+  var currentTimeAPm = dayjs().format('a');
+  var currentDay =  dayjs().day(7).format(' dddd');
   console.log(currentTime);
   $("p#currentDay").text('Today is: ' + currentDay);
-  $("p#currentTime").text('Time: ' +currentTime);
+  $("p#currentTime").text('Time: ' + currentTime);
 
 
 
@@ -37,21 +39,50 @@ $(document).ready(function () {
 for (let index = 1; index <= timeCardsAm; index++) {
   containerAm.append(timeBlockAm);
   var cardTime = '.card-' + index;
+  var assembledTimeAm = index + ' am';
   var currentCard = containerAm.find('.time-block-am').last();
   currentCard.removeClass('hidden').addClass(cardTime);
-  currentCard.find('.hour').text(index + ' pm');
+  currentCard.find('.hour').text(assembledTimeAm);
+  if (assembledTimeAm == currentTimeNum){
+    currentCard.addClass("present");
+  }
+  if (currentTimeNum < index){
+    if (currentTimeAPm ==  'am'){
+      currentCard.addClass("future");
+    }
+  }
 }
 
 for (let index = 1; index <= timeCardsPm; index++) {
   containerPm.append(timeBlockPm);
   var cardTime = '.card-pm-' + index;
+  var assembledTimePm = index + ' pm';
   var currentCard = containerPm.find('.time-block-pm').last();
   currentCard.removeClass('hidden').addClass(cardTime);
-  currentCard.find('.hour').text(index + ' pm');
+  currentCard.find('.hour').text(assembledTimePm);
+  if (assembledTimePm == currentTime){
+    currentCard.addClass("present");
+  }
+  if (currentTimeNum < index){
+    if (currentTimeAPm == 'pm'){
+      currentCard.addClass("future");
+    }
+  }
 }
 
 
+
+var nowCardAm = assembledTimeAm;
+// var nowCardPm = assembledTimePm;
+
+// if (nowCardAm == currentTime){
   
+// }else if (nowCardPm == currentTime)
+
+
+// console.log(nowCardAm);
+  
+
 
 
 
