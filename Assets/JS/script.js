@@ -10,75 +10,51 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
+  // Display Day and time
+  var currentTime = dayjs().format('h a');
+  var currentDay =  dayjs().day(12).format(' dddd');
+  console.log(currentTime);
+  $("p#currentDay").text('Today is: ' + currentDay);
+  $("p#currentTime").text('Time: ' +currentTime);
+
+
+
   $('.btn').click(function (e) { 
     e.preventDefault();
     
   }); 
+
+
+
   var timeBlockAm =  $('.time-block-am').prop('outerHTML');
   var timeBlockPm =  $('.time-block-pm').prop('outerHTML');
   var containerAm = $('.container-lg-am');
   var containerPm = $('.container-lg-pm');
   var timeCardsAm = 12;
   var timeCardsPm = 12;
-  var timeAm = 1; 
-  var timePm = 1;
 
-  
-for (let index = 1; index < timeCardsAm; index++) {
+//loops to generate the time blocks
+for (let index = 1; index <= timeCardsAm; index++) {
   containerAm.append(timeBlockAm);
+  var cardTime = '.card-' + index;
+  var currentCard = containerAm.find('.time-block-am').last();
+  currentCard.removeClass('hidden').addClass(cardTime);
+  currentCard.find('.hour').text(index + ' pm');
+}
 
-  $('.time-block-am').addClass(function( index ) {
-    return "card-" + index; 
-  });
-
-  for (let index = 0; index < timeAm; index++) {
-    if (timeAm < 13){
-      console.log(timeAm);
-      timeAm == timeAm++;  
-  }
-  $('.card-'+timeAm).text(timeAm);
-  
- }
+for (let index = 1; index <= timeCardsPm; index++) {
+  containerPm.append(timeBlockPm);
+  var cardTime = '.card-pm-' + index;
+  var currentCard = containerPm.find('.time-block-pm').last();
+  currentCard.removeClass('hidden').addClass(cardTime);
+  currentCard.find('.hour').text(index + ' pm');
 }
 
 
-
-
-// for (let index = 0; index < timeCardsPm; index++) {
-//   containerPm.append(timeBlockPm);
-//   $('.time-block-pm').addClass(function( index ) {
-//     return "card-" + index; 
-//   });
   
 
 
 
-
-
-
-
-
-// for (let index = 0; index < hours; index++) {
-// $("div#timeAm").text(timeAm+'am');  
-// timeAm++;
-// }
-
-// if (timeAm < 12) {
-//   $("div#timeAm").text(timeAm+'am');  
-  
-// }else{
-//   timeAm++;
-// };
-
-
-
-// if (timeCards !== 24){
-//   $($("div.row")).appendTo($('.container-lg'));
- 
-// }
-
-
-  // $('.time-block').appendTo("div.row.time-block");
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -88,20 +64,6 @@ for (let index = 1; index < timeCardsAm; index++) {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-
-
-
-
-
-  
-// Display Day and time
-var currentTime = dayjs().format('h a');
-var currentDay =  dayjs().day(12).format(' dddd');
-
-
-$("p#currentDay").text('Today is: ' + currentDay);
-$("p#currentTime").text('Time: ' +currentTime);
-
 
 });
 

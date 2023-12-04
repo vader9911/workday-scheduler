@@ -43,7 +43,7 @@ textarea {
   
 }
 
-.time-block {
+.time-block-am {
   border-radius: 15px;
 }
 
@@ -88,3 +88,6 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+.hidden {
+  display: none;
+}
