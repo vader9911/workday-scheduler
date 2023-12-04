@@ -1,19 +1,46 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background-color: bisque;
 }
+
+header {
+  background-color: darkred;
+  color: orange;
+}
+
+ #currentDay {
+  font-size: 38pt;
+  padding-top: 10px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#currentTime {
+  font-size: 38pt;
+
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 
 textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
   padding: 10px;
+  
 }
+
+
+
+
+
 
 .description {
   white-space: pre-wrap;
+  
 }
 
 .time-block {
@@ -25,9 +52,12 @@ textarea {
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: bisque;
   color: #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
   border-top: 1px dashed #000000;
+  
 }
 
 .past {
@@ -57,3 +87,4 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
