@@ -86,9 +86,43 @@ function populateTextAreasPm() {
   var timeBlockPm =  $('.time-block-pm');
   var containerAm = $('.container-lg-am');
   var containerPm = $('.container-lg-pm');
-  var timeCardsAm = 12;
-  var timeCardsPm = 12;
+  var timeCardsAm = 11;
+  var timeCardsPm = 11;
 
+function twelveAm () {  
+  containerAm.append(timeBlockAm.clone());
+  var twelveAmCard = containerAm.find('.time-block-am').last();
+  var twelveAmCardText = twelveAmCard.find('.description');
+
+  twelveAmCard.removeClass('hidden').addClass('card-12');
+  twelveAmCard.find('.hour').text('12 am');
+  twelveAmCardText.attr('id', 12);
+
+  // Add check to color block
+  if (currentTimeNum == 12 && currentTimeAPm == 'am') {
+    twelveAmCard.addClass("present");
+  }
+
+};
+
+function twelvePm () {  
+  containerPm.append(timeBlockPm.clone());
+  var twelvePmCard = containerPm.find('.time-block-pm').last();
+  var twelvePmCardText = twelvePmCard.find('.description');
+
+  twelvePmCard.removeClass('hidden').addClass('card-12');
+  twelvePmCard.find('.hour').text('12 pm');
+  twelvePmCardText.attr('id', 12);
+
+  // Add check to color block
+  if (currentTimeNum == 12 && currentTimeAPm == 'pm') {
+    twelveAmCard.addClass("present");
+  }
+
+};
+
+twelveAm()
+twelvePm()
 //loops to generate the time blocks for am & pm
 for (let index = 1; index <= timeCardsAm; index++) {
   containerAm.append(timeBlockAm.clone());
