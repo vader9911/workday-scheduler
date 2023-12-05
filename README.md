@@ -15,7 +15,8 @@ This project is a web based daily planner that shows the current day of week, ti
 
 ## Preview
 
-![a picture of the finished daily planner]()
+![a picture of the finished daily planner](![dailyplannerpage](https://github.com/vader9911/workday-scheduler/assets/82685075/24963452-3a13-42b2-9fe2-3bf6bfa174a2)
+
 
 https://vader9911.github.io/workday-scheduler/
 ## Sources
