@@ -10,6 +10,7 @@ $(document).ready(function () {
   $("p#currentDay").text('Today is: ' + currentDay);
   $("p#currentTime").text('Time: ' + currentTime);
   
+  //save button event 
   $('.container-lg-am').on('click', '.time-block-am button', function (e) {
     e.preventDefault();
     // Get the textarea that corresponds to the clicked button
@@ -33,7 +34,6 @@ $('.container-lg-pm').on('click', '.time-block-pm button', function (e) {
   // Get the text from the textarea
   var inputValue = currentTextArea.val();
   var key = 'textPm_' + textareaId;
-  
   // Store the text in local storage with the textareaId as the key
   localStorage.setItem(key, inputValue);
 });
@@ -89,7 +89,7 @@ function populateTextAreasPm() {
   var timeCardsAm = 12;
   var timeCardsPm = 12;
 
-//loops to generate the time blocks
+//loops to generate the time blocks for am & pm
 for (let index = 1; index <= timeCardsAm; index++) {
   containerAm.append(timeBlockAm.clone());
   var assembledTimeAm = index + ' am';

@@ -2,23 +2,26 @@
 
 ## Description
 
-This project is a web based daily planner
-## Development
+This project is a web based daily planner that shows the current day of week, time by hour, and schedule. The schedule can be updated and filled out. It will also color code time slots based on past, present, and future.
 
+## Development
+  Coding this project required me to become much mor familiar with jquery. I mostly needed practice with selectors and that is where most of my issues arose. I also added styling to the page to make it more visually appealing. 
 
 
 ## Usage
 
-    A multiple-choice style game to quiz you on web developement topics such as HTML, CSS and javaScript! To play the game, press the START button to start the quiz and the countdown timer. Answer the question presented to move on but choose carefully as an incorrect answer will subtract time from the timer. The game will end when all questions are correctly answered or the timer runs out. Your score is the remaining time.
-   
+    A simple daily planner. Click on a time slot to input your activities, the click the save button to record them. 
+  
 
 ## Preview
 
-![a picture of the finished start page of the quiz]((https://github.com/vader9911/quiz-game/assets/82685075/cf5e13f2-b298-472d-b044-ed3eddc10e6f)
+![a picture of the finished daily planner]()
 
+https://vader9911.github.io/workday-scheduler/
 ## Sources
 
 MDN was used for code snippets and research.
+jquery and bootstrap used for snippets 
 Chat AI was used to help answer some questions about syntax usage.
 
 
